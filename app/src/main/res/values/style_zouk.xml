@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Zouk" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:actionBarItemBackground">@drawable/selectable_background_zouk</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu.Zouk</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownListView.Zouk</item>
+        <item name="android:actionDropDownStyle">@style/DropDownNav.Zouk</item>
+        <item name="android:actionBarTabStyle">@style/ActionBarTabStyle.Zouk</item>
+        <item name="android:actionBarStyle">@style/ActionBar.Solid.Zouk</item>
+        <item name="android:actionModeBackground">@drawable/cab_background_top_zouk</item>
+        <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_zouk</item>
+        <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Zouk</item>
+
+        <!-- Light.DarkActionBar specific -->
+        <item name="android:textViewStyle">@style/Theme.Zouk.SerifTextViewStyle</item>
+        <item name="android:actionBarWidgetTheme">@style/Theme.Zouk.Widget</item>
+        <item name="android:listChoiceIndicatorSingle">@drawable/radio_holo_light</item>
+        <item name="android:listChoiceIndicatorMultiple">@drawable/radio_holo_light</item>
+
+        <item name="vpiCirclePageIndicatorStyle">@style/Theme.Zouk.CustomCirclePageIndicator</item>
+
+        <item name="android:titleTextStyle">@style/Theme.Zouk.TitleTextStyle</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:typeface">serif</item>
+        <item name="colorPrimary">@color/black</item>
+
+        <!-- colorPrimaryDark is used for the status bar -->
+        <item name="colorPrimaryDark">@color/black</item>
+
+        <!-- colorAccent is used as the default value for colorControlActivated,
+             which is used to tint widgets -->
+        <item name="colorAccent">@color/accent_material_light</item>
+
+        <!-- You can also set colorControlNormal, colorControlActivated
+             colorControlHighlight, and colorSwitchThumbNormal. -->
+        <item name="android:windowActionModeOverlay">true</item>
+    </style>
+
+    <style name="ActionBar.Solid.Zouk" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@drawable/ab_solid_zouk</item>
+        <item name="android:backgroundStacked">@drawable/ab_stacked_solid_zouk</item>
+        <item name="android:backgroundSplit">@drawable/ab_bottom_solid_zouk</item>
+        <item name="android:progressBarStyle">@style/ProgressBar.Zouk</item>
+        <item name="android:titleTextStyle">@style/Theme.Zouk.TitleTextStyle</item>
+        <item name="android:typeface">serif</item>
+    </style>
+    <style name="ActionBar.Transparent.Zouk" parent="@android:style/Widget.Holo.ActionBar">
+        <item name="android:background">@drawable/ab_transparent_zouk</item>
+        <item name="android:progressBarStyle">@style/ProgressBar.Zouk</item>
+        <item name="android:typeface">serif</item>
+    </style>
+
+    <style name="PopupMenu.Zouk" parent="@android:style/Widget.Holo.ListPopupWindow">
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_zouk</item>
+        <item name="android:typeface">serif</item>
+    </style>
+
+    <style name="DropDownListView.Zouk" parent="@android:style/Widget.Holo.ListView.DropDown">
+        <item name="android:divider">@color/separator_color</item>
+        <item name="android:dividerHeight">1dp</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:background">@android:color/black</item>
+    </style>
+
+    <style name="ActionBarTabStyle.Zouk" parent="@android:style/Widget.Holo.ActionBar.TabView">
+        <item name="android:background">@drawable/tab_indicator_ab_zouk</item>
+        <item name="android:typeface">serif</item>
+    </style>
+
+    <style name="DropDownNav.Zouk" parent="@android:style/Widget.Holo.Spinner">
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_zouk</item>
+        <item name="android:typeface">serif</item>
+    </style>
+
+    <style name="ProgressBar.Zouk" parent="@android:style/Widget.Holo.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/progress_horizontal_zouk</item>
+        <item name="android:typeface">serif</item>
+    </style>
+
+    <style name="ActionButton.CloseMode.Zouk" parent="@android:style/Widget.Holo.ActionButton.CloseMode">
+        <item name="android:typeface">serif</item>
+    </style>
+
+    <!-- this style is only referenced in a Light.DarkActionBar based theme -->
+    <style name="Theme.Zouk.Widget" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:popupMenuStyle">@style/PopupMenu.Zouk</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownListView.Zouk</item>
+        <item name="android:typeface">serif</item>
+    </style>
+
+    <style name="Theme.Zouk.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/menu_title_slide_pink</item>
+        <item name="android:typeface">serif</item>
+    </style>
+
+    <style name="Theme.Zouk.RadioButtonAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:button">@drawable/radio_holo_light</item>
+    </style>
+
+    <style name="Theme.Zouk.CheckButtonAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:button">@drawable/radio_holo_light</item>
+    </style>
+
+    <style name="Theme.Zouk.SerifTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:typeface">serif</item>
+    </style>
+
+    <style name="Theme.Zouk.CustomTitlePageIndicator">
+        <item name="android:background">#18FF0000</item>
+        <item name="footerColor">#FFAA2222</item>
+        <item name="footerLineHeight">1dp</item>
+        <item name="footerIndicatorHeight">3dp</item>
+        <item name="footerIndicatorStyle">underline</item>
+        <item name="android:textColor">#AA000000</item>
+        <item name="selectedColor">#FF000000</item>
+        <item name="selectedBold">true</item>
+    </style>
+
+    <style name="Theme.Zouk.CustomCirclePageIndicator">
+        <item name="fillColor">@color/orange</item>
+        <item name="strokeColor">@android:color/transparent</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="radius">3dp</item>
+        <item name="centered">true</item>
+    </style>
+
+    <style name="PopupAnimation">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+</resources>

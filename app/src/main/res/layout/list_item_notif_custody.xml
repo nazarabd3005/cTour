@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/dark_pink"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <RelativeLayout
+            android:id="@+id/iv_notif_img_holder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:id="@+id/iv_notif_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/notifications_rooms" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_notif_img_holder"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_notif_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Just now"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_notif_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:text="Bottle in Custody !"
+                android:textSize="16sp"
+                android:textColor="@color/menu_title_slide_pink" />
+
+            <TextView
+                android:id="@+id/tv_bottle_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Smirnoff - 60%"
+                android:textSize="16sp"
+                android:textColor="@color/menu_title_slide_pink" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <mehdi.sakout.fancybuttons.FancyButton xmlns:fancy="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/btn_details"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        fancy:fb_defaultColor="@color/button_bottom_pink"
+        fancy:fb_focusColor="@color/dark_pink"
+        fancy:fb_iconPosition="left"
+        fancy:fb_text="DETAILS"
+        fancy:fb_textColor="@color/white"
+        fancy:fb_textFont="ProximaNovaSemibold.otf"
+        fancy:fb_textSize="16sp" />
+
+
+</LinearLayout>

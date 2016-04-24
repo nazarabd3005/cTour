@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/left_slider_background"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/cancel_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="15dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/sliders_close_icon"
+            android:id="@+id/iv_close_drawer" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/menu_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_below="@+id/cancel_holder"
+        android:orientation="vertical">
+        <!--<ListView-->
+            <!--android:id="@+id/lv_left_menu"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:divider="@android:color/transparent"-->
+            <!--android:layout_height="354dp"-->
+            <!--android:choiceMode="singleChoice"-->
+            <!--android:background="@android:color/transparent"-->
+            <!--android:dividerHeight="0dp" />-->
+
+        <com.giffar.ctour.customview.WrappingGridView
+            android:id="@+id/left_menu_grid"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="10dp"
+            android:horizontalSpacing="5dp"
+            android:numColumns="2"
+            android:listSelector="@android:color/transparent"
+            android:choiceMode="singleChoice"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="10dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/user_info_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/account_holder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
+
+            <com.giffar.ctour.customview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/iv_user_profile"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:contentDescription="@string/content_description"
+                android:scaleType="centerCrop"
+                android:src="@drawable/sliders_avatar_sample_empty"
+                app:border_color="@color/white" />
+
+            <pl.droidsonroids.gif.GifImageView
+                android:layout_marginLeft="20dp"
+                android:id="@+id/loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/zouk_loading"
+                android:background="@drawable/zouk_loading"
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:id="@+id/tv_username"
+                style="?android:attr/textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:singleLine="false"
+                android:ellipsize="end"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="center"
+                android:text="Username"
+                android:textColor="@android:color/white"
+                android:textSize="15sp" />
+            </LinearLayout>
+
+        <!--<com.uber.sdk.android.rides.RequestButton-->
+            <!--xmlns:uber="http://schemas.android.com/apk/res-auto"-->
+            <!--android:id="@+id/uber_button_black"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="?actionBarSize"-->
+            <!--android:visibility="gone"-->
+            <!--android:layout_below="@+id/account_holder"-->
+            <!--android:text="Get Uber Ride"-->
+            <!--android:textSize="12sp"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--uber:client_id="@string/client_id"-->
+            <!--uber:style="black"/>-->
+
+    </RelativeLayout>
+
+</RelativeLayout>

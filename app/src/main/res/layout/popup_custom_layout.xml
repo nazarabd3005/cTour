@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/age_bubble_square">
+
+    <TextView
+
+        android:id="@+id/popup_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="3dp"
+        android:textStyle="normal"
+        android:text="Your age must be at least 21" />
+
+</RelativeLayout>

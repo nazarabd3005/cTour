@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="ManisEncryptKey">m$5j11Ma12!</string>
+    <string name="mall_key_api">b6d38942b71ba4c6e547f4a50a31aad8</string>
+    <string name="mall_key_apix">b6d38942b71ba4c6e547f4a50a31aad8</string>
+    <string name="mall_key_apis">b6d38942b71ba4c6e547f4a50a31aad8</string>
+    <string name="fb_app_id">790152667700092</string>
+
+    <string name="beacon_token_demo">aGrSW/pol49y7e0qTsqHVOxBrqxCJCHaodL3vWZOtLI=</string>
+    <string name="beacon_token_live">VcXumEXqh+Ph5xNckKhD55AQGKMTzyrBvnnQnE4ABYo=</string>
+    <string name="beacon_token_sandbox">aGrSW/pol49y7e0qTsqHVOxBrqxCJCHaodL3vWZOtLI=</string>
+    <string name="beacon_token_staging">VcXumEXqh+Ph5xNckKhD55AQGKMTzyrBvnnQnE4ABYo=</string>
+</resources>
