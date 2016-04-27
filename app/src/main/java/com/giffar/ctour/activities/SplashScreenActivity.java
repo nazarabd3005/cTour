@@ -194,7 +194,7 @@ public class SplashScreenActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        GoogleAnalyticsHelper.screenTracker(this, "Splashscreen");
+//        GoogleAnalyticsHelper.screenTracker(this, "Splashscreen");
     }
 
     private void clearDailyNotification() {

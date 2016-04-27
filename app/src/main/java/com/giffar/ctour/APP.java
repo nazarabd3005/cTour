@@ -36,7 +36,7 @@ public class APP extends MultiDexApplication {
     private static SharedPreferences PREFERENCES;
 
     static {
-        Security.insertProviderAt(new org.spongycastle.jce.provider.BouncyCastleProvider(), 1);
+//        Security.insertProviderAt(new org.spongycastle.jce.provider.BouncyCastleProvider(), 1);
     }
 
     @Override

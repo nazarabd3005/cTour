@@ -43,22 +43,18 @@ import pl.droidsonroids.gif.GifImageView;
 public class LeftSliderFragment extends BaseFragment implements OnItemClickListener, View.OnClickListener {
     public static final String UPDATE_USER_ACTION = "update_user_action";
     public static final String CLICK_MENU_ACTION = "click_menu_action";
-    private static final int[] menuTitle = {R.string.home, R.string.room, R.string.promo, R.string.event, R.string.book, R.string.custody, R.string.account, R.string.helps};
+    private static final int[] menuTitle = {R.string.home, R.string.event, R.string.account};
 
-    private static final int[] menuIcon = {R.drawable.ic_home_selector, R.drawable.ic_room_selector, R.drawable.ic_promo_selector, R.drawable.ic_event_selector, R.drawable.ic_book_selector, R.drawable.ic_custody_selector, R.drawable.ic_account_selector, R.drawable.ic_uber_selector};
+    private static final int[] menuIcon = {R.drawable.ic_home_selector, R.drawable.ic_event_selector,  R.drawable.ic_account_selector};
     //private ListView lvLeftMenu;
     private LeftMenuAdapter adapter;
     private List<LeftMenu> leftMenus;
     private int selectedPosition = -1;
     private User loggedUser;
-    private TextView tvUsername;
-    private CircleImageView ivUserProfile;
-    private ImageView ivUserBanner, ivCloseDrawer;
-    private View menuInfo, menuAccount;
+    private ImageView  ivCloseDrawer;
     private WrappingGridView menuGridView;
-    private LinearLayout accountHolder;
     private View selectedView;
-    GifImageView progressBar;
+//    GifImageView progressBar;
 
     private static final String DROPOFF_ADDR = "Jalan Tun Razak Kuala Lumpur Federal Territory of Kuala Lumpur Malaysia";
     private static final float DROPOFF_LAT = 3.16376f;
@@ -86,10 +82,8 @@ public class LeftSliderFragment extends BaseFragment implements OnItemClickListe
 
     @Override
     public void initView(View view) {
-        accountHolder = (LinearLayout) view.findViewById(R.id.account_holder);
-        ivUserProfile = (CircleImageView) view.findViewById(R.id.iv_user_profile);
-        tvUsername = (TextView) view.findViewById(R.id.tv_username);
-        progressBar = (GifImageView) view.findViewById(R.id.loading);
+
+//        progressBar = (GifImageView) view.findViewById(R.id.loading);
 //        lvLeftMenu = (ListView) view.findViewById(R.id.lv_left_menu);
         menuGridView = (WrappingGridView) view.findViewById(R.id.left_menu_grid);
         ivCloseDrawer = (ImageView) view.findViewById(R.id.iv_close_drawer);
@@ -132,23 +126,12 @@ public class LeftSliderFragment extends BaseFragment implements OnItemClickListe
     @Override
     public void setUICallbacks() {
         menuGridView.setOnItemClickListener(this);
-        accountHolder.setOnClickListener(this);
     }
 
     @Override
     public void updateUI() {
         loggedUser = UserModel.getMe(activity);
         menuGridView.setAdapter(adapter);
-        if (!APP.getConfig(activity, Preferences.USER_LOGIN).equalsIgnoreCase("Y")) {
-            tvUsername.setText("Guest");
-        } else {
-            if (loggedUser != null) {
-                tvUsername.setText(addNewLine(loggedUser.getFull_name()));
-//                loadImage(loggedUser.getImage(), ivUserProfile, R.drawable.sliders_avatar_sample_empty, new ImageSize(100, 100));
-//                ImageLoader.getInstance().displayImage(loggedUser.getImage(),ivUserProfile);
-                imagePhotoLoader(loggedUser.getImage(), R.drawable.sliders_avatar_sample_empty, ivUserProfile, 100, progressBar);
-            }
-        }
         LocalBroadcastManager.getInstance(activity).registerReceiver(broadcastReceiver, new IntentFilter("image_profil"));
 
     }
@@ -287,14 +270,14 @@ public class LeftSliderFragment extends BaseFragment implements OnItemClickListe
     public void onClick(View v) {
         BaseFragment fragment = null;
         int position = 0;
-        if (v == menuAccount) {
-            position = 7;
-            if (APP.isHasLogin(activity)) {
-//                fragment = new AccountFragment();
-            }
-        } else if (v == menuInfo) {
-            position = 6;
-        }
+//        if (v == menuAccount) {
+//            position = 7;
+//            if (APP.isHasLogin(activity)) {
+////                fragment = new AccountFragment();
+//            }
+//        } else if (v == menuInfo) {
+//            position = 6;
+//        }
         if (selectedView != null) {
             selectedView.setSelected(false);
         }
@@ -308,28 +291,6 @@ public class LeftSliderFragment extends BaseFragment implements OnItemClickListe
 //            }else {
 //            }
 //        }
-
-        if (v == accountHolder) {
-            if (APP.getConfig(activity, Preferences.USER_LOGIN).equals("Y")) {
-//                ((MainActivity) activity).changeActivity(EditProfileActivity.class);
-            } else {
-                AlertDialog.Builder builder = AlertHelper.getInstance().showAlertWithoutListener(activity, "Account Permission", "You need to login first. Login?");
-                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-//                        ((MainActivity) getActivity()).changeActivity(LoginActivity.class, true, null, 0);
-                    }
-                });
-                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-//                            AlertHelper.getInstance().showAlert(MainActivity.this, "To use this App you need to turn on your Bluetooth");
-                        dialog.dismiss();
-                    }
-                });
-                builder.show();
-            }
-        }
         v.setSelected(true);
         selectedView = v;
         menuGridView.setItemChecked(-1, true);
@@ -356,9 +317,7 @@ public class LeftSliderFragment extends BaseFragment implements OnItemClickListe
         @Override
         public void onReceive(Context context, Intent intent) {
             loggedUser = UserModel.getMe(activity);
-
-            imagePhotoLoader(loggedUser.getImage(),R.drawable.sliders_avatar_sample_empty, ivUserProfile, 100, progressBar);
-            tvUsername.setText(addNewLine(loggedUser.getFull_name()));
+//            imagePhotoLoader(loggedUser.getImage(),R.drawable.sliders_avatar_sample_empty, ivUserProfile, 100, progressBar);
         }
     };
 }
