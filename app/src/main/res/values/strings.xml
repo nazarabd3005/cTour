@@ -1,0 +1,357 @@
+<resources>
+    <string name="app_name">cTour</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="content_description">ZOUK</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="connect_fb">CONNECT WITH FACEBOOK</string>
+    <string name="skip_login">SKIP</string>
+    <string name="login_email">EMAIL LOGIN</string>
+    <string name="sign_in_term">By signing up, you agree to our </string>
+    <string name="term_of_services">Terms of Services</string>
+    <string name="home">Home</string>
+    <string name="store">Stores</string>
+    <string name="room">Rooms</string>
+    <string name="helps">Help</string>
+    <string name="rooms">Room</string>
+    <string name="store_list">Stores List</string>
+    <string name="promo">Promos</string>
+    <string name="event">Events</string>
+    <string name="event_promo">EVENTS \u0026 PROMO</string>
+    <string name="contest">Contests</string>
+    <string name="on_tour">On Tour</string>
+    <string name="invitation">Invitation</string>
+    <string name="create_planning">Create Planning</string>
+    <string name="book">RSVN</string>
+    <string name="custody">Custody</string>
+    <string name="info">Info</string>
+    <string name="suggestion">Suggestion</string>
+    <string name="lost">Lost</string>
+    <string name="account">Account</string>
+    <string name="club">Club</string>
+    <string name="empty"></string>
+    <string name="near_me">Near You</string>
+    <string name="save_offer">SAVE PROMO</string>
+    <string name="delete_offer">DELETE PROMO</string>
+    <string name="redeem">REDEEM</string>
+    <string name="details">DETAILS</string>
+    <string name="dummy_desc">Get this special end of the year offer, buy one and get one free for all waffels menu.</string>
+    <string name="term_condition">Terms and Conditions</string>
+    <string name="dummy_term_condition">- Valid until 24th Dec\n- 1 offer can be used by one person only\n- Limited to purchase in this mall only</string>
+    <string name="location">Location</string>
+    <string name="call">Call</string>
+    <string name="service">Services</string>
+    <string name="facilites">Facilities</string>
+    <string name="parking">Parking</string>
+    <string name="hotels">Hotels</string>
+    <string name="about">About</string>
+    <string name="saved_offers">Saved Promos</string>
+    <string name="loading">Loading&#8230;</string>
+    <!-- <string name="url_share">http://share.nusentral.com/promo/</string> -->
+    <string name="url_share">http://nusentral.com/deal/detail?id=</string>
+    <string name="qr_code">QR Code</string>
+    <string name="dummy_code">02-7F3-14218138-27b</string>
+    <string name="done">DONE</string>
+    <string name="login_slider_text">GREAT\nSHOPPING\nMADE\nEASY</string>
+    <string name="text_facebook_signup_confirm">Select Yes to complete registration via Facebook</string>
+    <string name="text_facebook_connect">Facebook Connect</string>
+    <string name="text_allow_access_profile">You must allow NU Sentral to access your profile</string>
+    <string name="guest_dialog_title">Limited Access</string>
+    <string name="guest_dialog_message">To access this feature,you need to signup.</string>
+    <string name="text_close">CLOSE</string>
+    <string name="saved_offer_count">%1$d Promos</string>
+    <string name="following_store_count">%1$d Stores</string>
+    <string name="offers">Offers</string>
+    <string name="aggrement_must_be_confirm">"Agreement must be confirm",</string>
+    <string name="notification">Notifications</string>
+    <string name="notification_clear">Clear</string>
+    <string name="expired_on">Expires %1$s</string>
+    <string name="bullet">&#8226;</string>
+    <string name="store_address">%1$s %2$s</string>
+    <string name="website">Website</string>
+    <string name="settings">Settings</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="notifications">Notifications</string>
+    <string name="name">Full Name</string>
+    <string name="member_no">Member No.</string>
+    <string name="email">Email</string>
+    <string name="name_hint">Fill in your full name</string>
+    <string name="member_no_hint">Fill in your ZOUK Membership No</string>
+    <string name="birthdate">Date of Birth</string>
+    <string name="gender">Gender</string>
+    <string name="address">Address</string>
+    <string name="nric">NRIC / \nPassport No.</string>
+    <string name="city">City</string>
+    <string name="password">Password</string>
+    <string name="retypepassword">Retype\nPassword</string>
+    <string name="zip_code">Zip Code</string>
+    <string name="save">Save</string>
+    <string name="register">Register</string>
+    <string name="followed_stores">Followed Stores</string>
+    <string name="about_desc"><Data><![CDATA[<p>NU Sentral is part of the RM1.4 billion investment of Lot G integrated development in Kuala Lumpur Sentral CBD. It is a joint venture between Malaysian Resources Corporation Berhad (MRCB) and Pelaburan Hartanah Berhad (PHB)</p> <p>NU Sentral is the first Malaysia’s integrated lifestyle and transit mall hub developed to optimize the changing lifestyles of Malaysian and international travelers.</p> <p>Located at Kuala Lumpur Sentral CBD, Kuala Lumpur’s strategic Central Business District, NU Sentral has a captive market of over 800,000 households and a total population of over 3.6 million who will be moved like never before.</p> Nothing compares with NU Sentral’s CONNECTIVITY, CONVERGENCE and CONVENIENCE.</p><p> The experience is URBAN, FRESH and AGILE. Retail, Entertainment and Food & Beverage will thrive in this energised and versatile nu environment.</p>]]></Data></string>
+    <string name="version">Version</string>
+    <string name="build_number">Build Number</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="event_not_found">Event Not Found</string>
+    <string name="clear_notification">Clear Notifications</string>
+    <string name="empty_followed_store_text">You have not followed any store.\nAdd store by clicking the</string>
+    <string name="promo_not_found">Promo Not Found</string>
+    <string name="browse_stores">BROWSE STORES</string>
+    <string name="edit_profil_pic">Edit Picture</string>
+    <string name="text_cancel">Cancel</string>
+    <string name="text_upload">Upload</string>
+    <string name="text_take_from_camera">TAKE FROM CAMERA</string>
+    <string name="text_load_from_gallery">LOAD FROM GALLERY</string>
+    <string name="text_import_from_fb">IMPORT FROM FACEBOOK</string>
+    <string name="client_id">GOGxVl48Z_cIBMFPhqt_Ic-aA32mYe1S</string>
+
+    <string-array name="gender">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string name="login_info">Enter username and password</string>
+    <string name="login_username">Username</string>
+    <string name="login_username_required">&lt;font color="#04B9E6">Username&lt;/font> is required</string>
+    <string name="login_password">Password</string>
+    <string name="login_password_required">&lt;font color="#04B9E6">Password&lt;/font> is required</string>
+    <string name="login_signup">Don\'t have account? click &lt;font color="#91b6db">here&lt;/font> to signup</string>
+    <string name="login_submit">Login</string>
+    <string name="login_forgot_password">&lt;font color="#04B9E6">Forgot Password&lt;/font></string>
+    <string name="login_submit_info">Loging-in, please wait...</string>
+    <string name="login_submit_success">&lt;font color="#04B9E6">Successfully Logged In, Please Wait...&lt;/font></string>
+    <string name="signup_info">Enter all required detail below</string>
+    <string name="signup_name">Full name</string>
+    <string name="signup_name_required">&lt;font color="#04B9E6">Full name&lt;/font> is required</string>
+    <string name="signup_email">Email address</string>
+    <string name="signup_email_required">&lt;font color="#04B9E6">Email address&lt;/font> is required</string>
+    <string name="signup_email_invalid">Invalid Email address</string>
+    <string name="signup_mobile">Mobile phone number</string>
+    <string name="signup_mobile_required">&lt;font color="#04B9E6">Mobile phone number&lt;/font> is required</string>
+    <string name="signup_password">Password</string>
+    <string name="signup_password_required">&lt;font color="#04B9E6">Password&lt;/font> is required</string>
+    <string name="signup_password_retype">Retype password</string>
+    <string name="signup_password_retype_required">&lt;font color="#04B9E6">Retype password&lt;/font> is required</string>
+    <string name="signup_password_doesnot_match">&lt;font color="#04B9E6">Password&lt;/font> and &lt;font color="#04B9E6">retype password&lt;/font> does not match</string>
+    <string name="signup_birthdate">Birthdate</string>
+    <string name="signup_birthdate_required">&lt;font color="#04B9E6">Birthdate&lt;/font> is required</string>
+    <string name="signup_gender">Gender</string>
+    <string name="signup_gender_required">&lt;font color="#04B9E6">Full name&lt;/font> is required</string>
+    <string name="signup_ref_code">Referral Code</string>
+    <string name="signup_submit_info">Signing-up, Please Wait...</string>
+    <string name="signup_submit_success">Success, Please Wait...</string>
+    <string name="login_email_required">&lt;font color="#04B9E6">Email&lt;/font> is required</string>
+    <string name="txt_rail_map">KLANG VALLEY RAIL TRANSIT MAP</string>
+    <string name="search">Search</string>
+    <string name="terms">Terms \u0026 Conditions</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="login">LOGIN</string>
+    <string name="logout_confirmation">Confirmation", "Do you want to Log Out?</string>
+    <string name="email_hint">Enter your email</string>
+    <string name="password_hint">Enter your password</string>
+    <string name="show">show</string>
+    <string name="cancel_all_caps">CANCEL</string>
+    <string name="verify_confirmation_code"><u>Verify Confirmation Code</u></string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="reset_password"><u>Reset Password</u></string>
+    <string name="reset_password_without_underline">Reset Password</string>
+    <string name="verify_reset_code">Verify Reset Code</string>
+    <string name="enter_new_password">Enter new password</string>
+    <string name="share_promo_date">From %1$s till %2$s</string>
+    <string name="copyright">Copyright 2014 Ebizu Sdn Bhd, All rights reserved.</string>
+    <string name="reset_password_label"><u>Already Have The Code? Click Here</u></string>
+    <string name="not_found">Result Not Found</string>
+    <string name="moeslim_term">Muslim can not make a booking since \n it involves buying alcoholic beverages \n in compliance with Malaysia\'s law No. 2342</string>
+    <string name="btn_continue">CONTINUE</string>
+    <string name="dummy_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras varius augue non mauris tempus, id varius ex efficitur. Curabitur vel lacus efficitur, porttitor elit eget, dapibus magna. Mauris sagittis dignissim nisi nec interdum. Sed semper dolor a elementum faucibus. In in lectus ac sem rhoncus iaculis. Morbi ut enim elit. Phasellus sed massa felis. Quisque laoreet turpis ante, in finibus nisl commodo ac. Pellentesque in pharetra massa. Integer porta consectetur orci, eget efficitur sem aliquam a.\n
+
+Etiam dictum pretium leo vel feugiat. Vivamus id mollis risus. Nunc elementum vehicula metus, ut efficitur diam molestie ac. Donec ut dictum lorem. Mauris nunc diam, varius vel faucibus non, scelerisque eget erat. Sed aliquam massa vel nibh malesuada rhoncus vel quis lectus. Maecenas gravida, ante ac finibus faucibus, urna lacus pellentesque dui, a consectetur felis diam at massa. Duis tincidunt dui vitae ligula iaculis hendrerit. Nulla nibh enim, viverra at tellus a, luctus scelerisque lorem. Maecenas rutrum, lorem nec tincidunt pellentesque, erat felis congue augue, nec rutrum ex mauris nec ligula.\n
+
+Etiam in erat non erat pulvinar porttitor. Nunc commodo aliquet rutrum. Ut pellentesque pharetra dolor, molestie tristique orci pellentesque in. Suspendisse rhoncus tempor risus in mollis. Ut ac tortor eget lorem pulvinar scelerisque eget et quam. Curabitur dictum dignissim mollis. Fusce at est nunc. Maecenas a sem dui. Nullam aliquam tellus sem, nec gravida dolor tincidunt tincidunt. Vivamus hendrerit bibendum turpis vitae molestie. Aliquam vel purus venenatis urna pulvinar mattis.\n
+
+Phasellus nec nunc nec magna sagittis euismod nec nec ante. Duis lobortis enim nec odio pellentesque imperdiet. Morbi eros nulla, convallis eu eros a, aliquam maximus lorem. Vestibulum euismod ac lorem tincidunt tempus. Morbi ultricies sem vel ultrices ultricies. Ut hendrerit nisl accumsan tortor venenatis, placerat convallis ex egestas. Quisque et ligula fermentum, luctus urna in, luctus dolor. Vestibulum elit leo, faucibus et tellus sit amet, sollicitudin ullamcorper nunc. Nulla ut maximus nisi. Morbi cursus tincidunt ultricies. Mauris sit amet elementum erat. Vivamus rutrum efficitur orci, id tempor enim fringilla sed. Nullam tincidunt fringilla commodo. Curabitur pellentesque aliquam elit quis vulputate.\n
+
+Quisque ac metus libero. Nam sed blandit enim. Donec mollis eros ac bibendum malesuada. Aliquam faucibus massa est, ut lobortis est varius consequat. Nullam lorem erat, efficitur quis blandit sit amet, imperdiet cursus ex. Nulla facilisi. Phasellus at nulla porttitor, egestas orci a, finibus felis. Vestibulum eros massa, feugiat imperdiet volutpat a, fermentum at ligula. Curabitur sollicitudin risus pulvinar lacus egestas, eu facilisis dui tempor. Nullam condimentum, libero et molestie iaculis, lorem eros pretium diam, ac placerat ex orci luctus nibh. Mauris vel felis tincidunt, tempus erat a, bibendum leo. Praesent rutrum vitae augue ut rhoncus. Duis hendrerit dui nulla, a accumsan sem blandit ac. Integer risus justo, pulvinar non leo et, fringilla vestibulum nisi. Aliquam viverra vel sapien vel hendrerit.</string>
+    <string name="term_of_service">
+Terms of Service\n\n
+
+Please read these Terms of Service ("Terms", "Terms of Service") carefully before using the http://zoukclub.com.my/ website (the "Service") operated by Zouk Club KL ("us", "we", or "our")
+\n\n
+Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who access or use the Service.
+\n\n
+By accessing or using the Service, you agree to be bound by these Terms. If you disagree with any part of the terms, then you may not access the Service.
+\n\n
+When you create an account with us, you must provide us with information that is accurate, complete, and current at all times. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of your account on our Service.
+\n\n \n\n
+
+
+
+
+
+
+
+Club Policy\n\n
+
+ZOUK CLUB KL operates a zero tolerance on drug and weapon policy.  We reserve the right to operate a random search, and we ask that customers kindly cooperate with such a request.  We reserve the right to refuse entry to the club, in the event customers fail to cooperate.  If you are found to have any weapons or drugs, you will be held and detained. The law enforcement will be contacted immediately. All patrons must be over 21 years of age with valid photo I.D
+\n\n
+Dress code: Smart Casual\n\n
+
+No shorts, slippers, sandals, baggy clothes, religious headscarves/hijab, athletic wear allowed for entry
+\n\n \n\n
+
+
+
+KL Pass \n\n
+
+The use of KL PASS is until 1:00am on selected days determined by the Management.  The terms &#038; conditions of the venue must be adhered to by KL PASS cardholders.  The attire must be compliant with the venue, and the minimum entry age is 21 years old. The Management reserves the right to refuse entry to any individual if the door policies are not met.
+\n\n \n\n
+
+
+
+Intellectual Property\n\n
+
+You will recognise that we own all intellectual property rights in the content on this website, and that you will not, either by yourself directly or by assisting or permitting others to do anything that breaches in any way such intellectual property rights of ourselves and, in particular, will not copy or reproduce any element of this website or its codes or use it, or any part of it, to create any content, document, website, image or graphic. In addition you will not create, or permit or assist others in creating, any hyperlink to any part of this website save to the home page nor take any action that directly or indirectly prevents, in whole or in part, access to, or reduces the enjoyment by yourself or others of, this website
+
+\n\n \n\n
+
+
+PRIVACY &#038; SECURITY POLICY \n\n
+
+Guiding Principles \n\n
+
+ZOUK CLUB (KL) SDN. BHD. (“Zouk”) will ensure that information received is not abused or misused.\n\n\n
+
+
+This Privacy Policy describes how we, Zouk Club (KL) Sdn. Bhd. (Company No. 598378M) of 436 Jalan Tun Razak, 50400, Kuala Lumpur, Malaysia (collectively termed as “we” or “us” or “our”) collect, use, process, record, hold, store, share and/or disclose (“process”) (termed as “you” or “your””) information when you use Zouk Mobile Application, Website and or Services. You are deemed to have consented to the processing and other possible uses of your information as described in this Privacy Policy. You acknowledge that you have consented to disclosing your personal information to us; and that we may use the information you provide to us at our discretion. This Privacy Policy applies to the use of Zouk Mobile Application, Website, Services and all related sites, applications, services and tools regardless of how you access or use them.
+\n\n\n
+
+Irrespective of your country of residence, where you access our applications, site or services from and or supply information from, you authorize us to use your information in Malaysia and any other countries where we operate. We reserve the right to amend this policy at any time and a revised version will be available at https://zoukclub.com.my/privacy .
+
+\n\n\n
+The revised version takes effect at the time we post it.
+\n\n \n
+
+How we disclose your information?\n\n
+
+We do not share, sell or transfer your personal information to third parties (other than affiliates and partner companies), or rent your personal identification information to others for marketing purposes unless you have given your explicit consent. We and our affiliates and partner companies only use your personal information for marketing purposes if you have agreed to this service. If you do not want us to share your personal information with our affiliates and partner companies, please inform us.
+\n\n
+
+Not withstanding anything to the contrary of this Privacy Policy, we reserve the right to disclose your information if we are required to comply with law, regulation or legal request; to address fraud, security or technical issues; or to protect our rights or property.
+\n\n
+
+In the event that we are involved in (without limitation to) insolvency, merger, acquisition or sale of assets, your information may be transferred as part of that transaction. The terms in this Privacy Policy will apply to your information as transferred to the new entity.
+
+\n\n
+How we collect Your Personal Information?\n\n
+
+We collect personal information from you in a variety of ways but not limited to at the point of registering your account, during a purchase transaction, certain services that do not require registration such as the search function, public user profiles, features, mini site viewing, advertiser details and the browsing and or navigational details or statistics.
+\n\n
+
+You may be required, where necessary, to register or provide username, password, picture, biography, address, postcodes, email, date of birth, telephone number(s), financial information such as bank account details, debit and or credit card information. We also collect information such as gender, income categories and geographical split to provide better services to you. While you have the right to refuse to provide any information, edit or delete information provided, however please note that this may limit your access to our Zouk Mobile Application, Website and or Services. We may from time to time require you to confirm their identity. We only collect and use information that is submitted by you to us.
+\n\n
+
+If you email us, we may keep the content of your message, all email address(es) in the circulation and contact information to respond to your request, for legal and training purposes. If you decide to connect your Zouk’s account to your other account(s) on another service provider (without limitation to for example Facebook or Twitter) in order to cross-post, the other service may send us your registration or profile information on their service and other information that you authorize and we may store them.
+\n\n
+
+We may evaluate your mobile device, computer, or any other access device from which you use our services to identify any malicious software or activity. When you use Zouk Mobile Application or access our Website, we may place data files generally known as "Cookies" on local storage provided by your browser or associated applications on your mobile device or computer to recognize you as our user, the type of device you are using, its operating system, browser details, Internet Service Providers and to measure promotional effectiveness. You may decline our Cookies if your browser or browser add-on permits, but doing so may limit the full function of Zouk Mobile Application or Website and/or Services
+\n\n
+
+Third parties (example advertising agencies) may place their own Cookies that are not subject to our control and this Privacy Policy does not cover their use.
+\n\n
+How we use your information?
+\n\n
+We may use your information provided by you (including but not limited to) for the following purposes: To respond to your inquiries, for processing your orders, to resolve disputes, collect fees or charges, processing refunds, sending you our and our partner companies promotional details &#038; offers (by e-mail, telephone, voice call, text and SMS) to improve our services and for training purposes.
+\n\n
+
+We also use your information to analyse, measure, and customise to improve the content, layout, and operation of Zouk Mobile Application and/or Website.
+\n\n
+
+How we store your information?
+\n\n
+We take necessary steps to store and process your information on our computers and or Servers (hosted by partner companies) in Malaysia and elsewhere in the world where we operate. We protect your information using physical, technical, and administrative security measures to reduce the risks of loss, misuse, unauthorized access, disclosure and alteration.
+\n\n
+
+This Privacy Policy does not cover any information submitted to us anonymously. Our electronic medium may contain links to other websites, and you should be aware that other sites linked by us may have different privacy policies and we highly recommend that you read and understand the privacy statements of each of the linked site. This Privacy Policy only covers our sites and applications.
+\n\n \n\n
+
+
+
+
+Links To Other Web Sites
+\n\n
+Our Service may contain links to third-party websites or services that are not owned or controlled by Zouk Club KL.
+
+\n\n
+Zouk Club KL has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party websites or services. You further acknowledge and agree that Zouk Club KL shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods or services available on or through any such websites or services.
+
+\n\n
+We strongly advise you to read the terms and conditions and privacy policies of any third-party websites or services that you visit.
+
+\n\n \n\n
+
+
+Changes
+\n\n
+We reserve the right, at our sole discretion, to modify or replace these Terms at any time. What constitutes a material change will be determined at our sole discretion.
+
+\n\n
+By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.
+
+\n\n \n\n
+
+
+Disclaimer
+\n\n
+We do our best to ensure that the information on this website is correct. However, we do not guarantee its completeness or accuracy. Should you spot any inaccuracies, kindly notify ZOUK CLUB KL via contact us e-mail, and indicate the relevant page.
+
+\n\n \n\n
+
+
+Contact Us\n\n
+
+If you have any questions about this Privacy Policy, please write to us at info@zoukclub.com.my +603 21103888 or at: Zouk Club (KL) Sdn. Bhd. 436 Jalan Tun Razak, 50400 Kuala Lumpur.    </string>
+
+    <string name="inviteFriend1">We\'ll invite your friends via SMS.</string>
+    <string name="inviteFriend2">Make sure they login / Sign up using\n the same phone no. you entered.</string>
+    <string name="addnumberfriends">number</string>
+    <string-array name="custom_weekdays">
+        <item>SUN</item>
+        <item>MON</item>
+        <item>TUE</item>
+        <item>WED</item>
+        <item>THU</item>
+        <item>FRI</item>
+        <item>SAT</item>
+    </string-array>
+
+    <string-array name="custom_months">
+        <item>JAN</item>
+        <item>FEB</item>
+        <item>MAR</item>
+        <item>APR</item>
+        <item>MAY</item>
+        <item>JUN</item>
+        <item>JUL</item>
+        <item>AUG</item>
+        <item>SEPT</item>
+        <item>OCT</item>
+        <item>NOV</item>
+        <item>DEC</item>
+    </string-array>
+
+    <string name="server_api">AIzaSyDf2u4vlORlrOQpatBsq51DLPMQ6MFMQzc</string>
+    <string name="sender_id">1003545369128</string>
+
+    //ctour
+
+    <string name="join_club">
+        Join with the club you want\n
+        and make a best journey\n together
+    </string>
+    <string name="descript_emergency_call">Emergency calls are used when you run into trouble and need a long time</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="eventspinner">event</string>
+    <string name="statusspinner">status</string>
+    <string name="suggestionspinner">suggestion</string>
+</resources>

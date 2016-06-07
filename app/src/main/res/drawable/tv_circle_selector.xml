@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true" android:drawable="@drawable/circle_pressed" />
+    <item>
+        <shape android:shape="ring" android:innerRadius="0dp"
+            android:thicknessRatio="2"
+            android:useLevel="false" >
+            <solid android:color="@color/dark_pink" />
+        </shape>
+    </item>
+</selector>

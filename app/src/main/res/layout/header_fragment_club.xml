@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/iv_header"
+    android:background="@color/blue"
+    android:gravity="center"
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:alpha="2"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <com.giffar.ctour.customview.CircleImageView
+            android:id="@+id/iv_logo"
+            android:layout_gravity="center"
+            android:src="@drawable/account_about_app_icon"
+            android:layout_width="70dp"
+            android:layout_height="70dp" />
+        <TextView
+            android:id="@+id/tv_name_club"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:text="Harimau club"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_since"
+            android:layout_margin="10dp"
+            android:textColor="@color/white"
+            android:textSize="17dp"
+            android:text="Since 2013"
+            android:layout_weight="0.5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textAlignment="center"
+            android:id="@+id/tv_official"
+            android:layout_margin="10dp"
+            android:textColor="@color/redeem_booking_ok"
+            android:textSize="17dp"
+            android:text="Unofficial"
+            android:layout_weight="0.5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_below="@id/tv_since"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textAlignment="center"
+            android:id="@+id/tv_description"
+            android:layout_margin="10dp"
+            android:textColor="@color/white"
+            android:textSize="17dp"
+            android:text="kami adalah klub tiger lets join us"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/androidSDK/androidSDK.iml" filepath="$PROJECT_DIR$/androidSDK/androidSDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cTour2.iml" filepath="$PROJECT_DIR$/cTour2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/material-calendar/material-calendar.iml" filepath="$PROJECT_DIR$/material-calendar/material-calendar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viewpagerIndicator/viewpagerIndicator.iml" filepath="$PROJECT_DIR$/viewpagerIndicator/viewpagerIndicator.iml" />
+    </modules>
+  </component>
+</project>

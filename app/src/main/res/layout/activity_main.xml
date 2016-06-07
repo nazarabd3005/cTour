@@ -1,0 +1,48 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:fitsSystemWindows="true"
+    tools:context=".activities.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/actionbar_black"
+            android:minHeight="?attr/actionBarSize"/>
+
+    </RelativeLayout>
+
+    <fragment
+        android:id="@+id/left_slider"
+        android:name="com.giffar.ctour.fragments.LeftSliderFragment"
+        android:layout_width="@dimen/slider_width"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:layout_marginLeft="-64dp"
+        android:divider="@android:color/transparent"
+        tools:layout="@layout/fragment_left_slider" />
+
+    <fragment
+        android:id="@+id/right_slider"
+        android:name="com.giffar.ctour.fragments.NotificationFragment"
+        android:layout_width="@dimen/slider_width"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:divider="@android:color/transparent"
+        tools:layout="@layout/fragment_notification" />
+
+</android.support.v4.widget.DrawerLayout>

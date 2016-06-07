@@ -1,0 +1,21 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="home_menu_icon_size">24dp</dimen>
+    <dimen name="circle_image_border">2dp</dimen>
+    <dimen name="sticky_height">60dp</dimen>
+    <dimen name="qr_code_size">150dp</dimen>
+    <dimen name="slider_width_left">150dp</dimen>
+    <dimen name="slider_width">240dp</dimen>
+    <dimen name="min_height_textheader_materiallike">62dp</dimen>
+    <dimen name="min_height_header_materiallike">100dp</dimen>
+    <dimen name="min_height_header">120dp</dimen>
+    <dimen name="max_height_header">250dp</dimen>
+    <dimen name="list_item_offer_height">95dp</dimen>
+    <dimen name="list_item_event_height">350dp</dimen>
+    <dimen name="edit_pic_size">100dp</dimen>
+    <integer name="transition_duration">150</integer>
+    <dimen name="min_height_header_share">130dp</dimen>
+    <dimen name="popup_max_height">50dp</dimen>
+</resources>
