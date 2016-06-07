@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.giffar.ctour.R;
 import com.giffar.ctour.entitys.Club;
+import com.giffar.ctour.helpers.DateHelper;
 
 import java.util.List;
 
@@ -18,11 +19,12 @@ import java.util.List;
 public class ListClubAdapter extends BaseAdapter<Club> {
     private List<Club> clubList;
     Context context;
-
+    DateHelper dateHelper;
 
     public ListClubAdapter(Context context) {
         super(context);
         this.context = context;
+        this.dateHelper = new DateHelper();
     }
 
     @Override
@@ -41,7 +43,7 @@ public class ListClubAdapter extends BaseAdapter<Club> {
             viewHolder = (ViewHolder) convertView.getTag();
         }
         if (club != null){
-            viewHolder.tvDate.setText(club.getCreated_date());
+            viewHolder.tvDate.setText(dateHelper.formatlongtoDate(Long.valueOf(club.getCreated_date()),"yyyy"));
             viewHolder.tvName.setText(club.getName_club());
             viewHolder.tvMerk.setText(club.getMerk());
         }

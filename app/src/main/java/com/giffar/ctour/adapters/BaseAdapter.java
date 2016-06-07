@@ -137,17 +137,25 @@ public abstract class BaseAdapter<T> extends android.widget.BaseAdapter {
         ImageLoader.getInstance().displayImage(uri,imageView,new SimpleImageLoadingListener(){
             @Override
             public void onLoadingStarted(String imageUri, View view) {
-                spinner.setVisibility(View.VISIBLE);
+                if (spinner!=null){
+                    spinner.setVisibility(View.VISIBLE);
+                }
+
             }
 
             @Override
             public void onLoadingFailed(String imageUri, View view, FailReason failReason) {
-                spinner.setVisibility(View.GONE);
+                if (spinner!=null){
+                    spinner.setVisibility(View.GONE);
+                }
+
             }
 
             @Override
             public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
-                spinner.setVisibility(View.GONE);
+                if (spinner!=null){
+                    spinner.setVisibility(View.GONE);
+                }
             }
         });
     }

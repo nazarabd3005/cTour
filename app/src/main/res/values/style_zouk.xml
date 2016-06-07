@@ -89,7 +89,7 @@
     </style>
 
     <style name="Theme.Zouk.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
-        <item name="android:textColor">@color/menu_title_slide_pink</item>
+        <item name="android:textColor">@color/redeem_booking_ok</item>
         <item name="android:typeface">serif</item>
     </style>
 

@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="?actionBarSize"
-    android:background="@color/actionbar_black">
+    android:background="@color/blue">
 
     <LinearLayout
         android:id="@+id/left_icon_container"

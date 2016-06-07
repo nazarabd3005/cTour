@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ListView
+        android:id="@+id/lv_member"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:background="@android:color/transparent"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="2dp"
+        android:drawSelectorOnTop="true"
+        android:transcriptMode="alwaysScroll"
+        android:listSelector="@drawable/selectable_background_zouk"
+        android:layout_marginBottom="50dp"/>
+    <mehdi.sakout.fancybuttons.FancyButton xmlns:fancy="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        fancy:fb_defaultColor="@color/redeem_booking_ok"
+        fancy:fb_focusColor="@color/dark_pink"
+        fancy:fb_text="JOIN"
+        fancy:fb_textColor="@android:color/white"
+        fancy:fb_textFont="ProximaNovaSemibold.otf"
+        fancy:fb_textSize="22sp"/>
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@android:color/transparent"
+        android:minHeight="?attr/actionBarSize" />
+</RelativeLayout>

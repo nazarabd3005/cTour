@@ -36,7 +36,7 @@ public class PickClubActivity extends BaseActivity implements View.OnClickListen
     @Override
     public void onClick(View v) {
         if (v == btnCreate)
-            changeActivity(CreateClub.class,false,null,0);
+            changeActivity(CreateClubActivity.class,false,null,0);
         else if(v == btnJoin)
             changeActivity(ListClubActivity.class,false,null,0);
     }

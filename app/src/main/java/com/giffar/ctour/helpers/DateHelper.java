@@ -138,7 +138,7 @@ public class DateHelper {
     }
 
     public String getDate() {
-        return getDate("yyyy-MM-dd");
+        return getDate(DATE_FORMAT);
     }
 
     public String getDate(String format) {

@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
-
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ListView
+        android:layout_marginTop="?actionBarSize"
+        android:id="@+id/ls_timeline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical">
+    </ListView>
+    <TextView
+        android:id="@+id/tv_notimeline"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:text="No Timeline for now"
+        android:textSize="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <at.markushi.ui.CircleButton
+        android:id="@+id/btn_status"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_width="64dip"
+        android:layout_height="64dip"
+        android:src="@drawable/book_guests_add"
+        app:cb_color="@color/redeem_booking_ok"
+        app:cb_pressedRingWidth="8dip" />
 </RelativeLayout>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darker_actionbar_black"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:textAlignment="center"
+            android:id="@+id/tv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:text="Ready for new planning"
+            android:textColor="@color/pink"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/et_title"
+            android:textSize="20dp"
+            android:hint="title"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+        <LinearLayout
+            android:background="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="3"
+                android:background="@android:color/transparent"
+                android:focusableInTouchMode="true"
+                android:hint="Type your feedback here"
+                android:inputType="textMultiLine"
+                android:lines="8"
+                android:minLines="1"
+                android:maxLines="10"
+                android:padding="15dp"
+                android:singleLine="false"
+                android:textColor="@color/edittext_grey"
+                android:textColorHint="@color/edittext_grey"
+                android:textCursorDrawable="@drawable/edittext_cursor_color"
+                android:textSize="14sp" />
+        </LinearLayout>
+        <RelativeLayout
+        android:id="@+id/btn_start"
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_start"
+                android:text="set location start"
+                android:textSize="15dp"
+                android:clickable="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_alignParentRight="true"
+                android:src="@drawable/right_arrow"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/btn_destionation"
+            android:padding="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_destination"
+                android:text="set destinaiton"
+                android:textSize="15dp"
+                android:clickable="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_alignParentRight="true"
+                android:src="@drawable/right_arrow"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/btn_tour_date"
+            android:padding="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_tour_date"
+                android:text="set date touring"
+                android:textSize="15dp"
+                android:clickable="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_alignParentRight="true"
+                android:src="@drawable/right_arrow"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+        </RelativeLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <mehdi.sakout.fancybuttons.FancyButton xmlns:fancy="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/btn_create"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:textAllCaps="true"
+                fancy:fb_defaultColor="@color/pink"
+                fancy:fb_focusColor="@color/light_pink"
+                fancy:fb_text="CREATE"
+                fancy:fb_textGravity="center"
+                fancy:fb_textFont="ProximaNovaSemibold.otf"
+                fancy:fb_iconFont="ProximaNovaSemibold.otf"
+                fancy:fb_textColor="@color/white"
+                fancy:fb_textSize="18sp" />
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@string/content_description"
+            android:scaleType="centerCrop"
+            android:src="@drawable/sliders_close_icon" />
+
+    </LinearLayout>
+
+</LinearLayout>

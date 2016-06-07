@@ -15,7 +15,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.crashlytics.android.Crashlytics;
 import com.giffar.ctour.APP;
 import com.giffar.ctour.Preferences;
 import com.giffar.ctour.R;
@@ -29,7 +28,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import io.fabric.sdk.android.Fabric;
 
 public class SplashScreenActivity extends AppCompatActivity {
     private TextView tLoadingMessage;
@@ -39,7 +37,7 @@ public class SplashScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Fabric.with(this, new Crashlytics());
+//        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_splashscreen);
         tLoadingMessage = (TextView) this.findViewById(R.id.tLoadingMessage);
         context = this;
@@ -173,7 +171,10 @@ public class SplashScreenActivity extends AppCompatActivity {
 
     private void isLogin(Context context) {
         if (APP.isHasLogin(context)) {
-            goMainActivity();
+            if (APP.getConfig(context,Preferences.CLUB_ID).equals("null")|| APP.getConfig(context, Preferences.CLUB_ID).equals("")){
+                goJoinActivity();
+            }else
+                goMainActivity();
         } else {
             goNextActivity();
         }
@@ -210,7 +211,17 @@ public class SplashScreenActivity extends AppCompatActivity {
             APP.setConfig(this, Preferences.LAST_CLEAR_NOTIF_DATE, DateHelper.getInstance().getDate());
         }
     }
-
+    public void goJoinActivity() {
+        new Handler(getMainLooper()).postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Class<?> destination = PickClubActivity.class;
+                Intent intent = new Intent(SplashScreenActivity.this, destination);
+                startActivity(intent);
+                finish();
+            }
+        }, 2000);
+    }
     public void goMainActivity() {
         new Handler(getMainLooper()).postDelayed(new Runnable() {
             @Override
@@ -263,7 +274,7 @@ public class SplashScreenActivity extends AppCompatActivity {
 //        }
 //
 //        Log.i("PARAMS", params.toString());
-//        ZOUKRestClient.post("devices", params, new JsonHttpResponseHandler() {
+//        CTourRestClient.post("devices", params, new JsonHttpResponseHandler() {
 //            @Override
 //            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
 //                super.onSuccess(statusCode, headers, response);

@@ -31,9 +31,12 @@ import android.widget.ImageView;
 
 import com.giffar.ctour.Config;
 import com.giffar.ctour.R;
+import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.assist.ImageSize;
+import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 
 import java.io.IOException;
@@ -48,6 +51,7 @@ public class PictureHelper {
     private Fragment fragment;
     private ImageLoader imageLoader;
     private static PictureHelper pictureHelper;
+    private Activity activity;
 
     public static PictureHelper getInstance(Context context) {
         if (pictureHelper == null) {
@@ -62,11 +66,29 @@ public class PictureHelper {
         pictureHelper.fragment = fragment;
         return pictureHelper;
     }
+    public static PictureHelper getInstance(Context context,Activity activity){
+        pictureHelper = getInstance(context);
+        pictureHelper.activity = activity;
+        return pictureHelper;
+    }
 
     public PictureHelper(Context context) {
         dateHelper = new DateHelper();
         this.ctx = context;
         imageLoader = ImageLoader.getInstance();
+        if (fragment==null){
+            ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(
+                    ctx)
+                    .threadPriority(Thread.NORM_PRIORITY - 2)
+                    .denyCacheImageMultipleSizesInMemory()
+                    .discCacheFileNameGenerator(new Md5FileNameGenerator())
+                    .tasksProcessingOrder(QueueProcessingType.LIFO)
+                    .writeDebugLogs() // Remove for release app
+                    .build();
+            // Initialize ImageLoader with configuration.
+
+            imageLoader.init(config);
+        }
     }
 
     public PictureHelper(Context context, Fragment fragment) {
@@ -120,10 +142,17 @@ public class PictureHelper {
         if (pickerDialog != null) pickerDialog.dismiss();
     }
 
-    public void pickFromGalery() {
+    public void pickFromGalleryFragment(){
         int requestCode = PICK_FROM_GALLERY;
         Intent pickPhoto = new Intent(Intent.ACTION_PICK, Media.EXTERNAL_CONTENT_URI);
         fragment.startActivityForResult(pickPhoto, requestCode);
+        if (pickerDialog != null) pickerDialog.dismiss();
+    }
+    public void pickFromGalery() {
+
+        int requestCode = PICK_FROM_GALLERY;
+        Intent pickPhoto = new Intent(Intent.ACTION_PICK, Media.EXTERNAL_CONTENT_URI);
+        activity.startActivityForResult(pickPhoto, requestCode);
         if (pickerDialog != null) pickerDialog.dismiss();
     }
 

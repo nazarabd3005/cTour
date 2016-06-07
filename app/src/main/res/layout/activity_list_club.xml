@@ -13,4 +13,10 @@
         android:layout_height="wrap_content"
         android:scrollbars="vertical">
        </ListView>
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@android:color/transparent"
+        android:minHeight="?attr/actionBarSize" />
 </RelativeLayout>

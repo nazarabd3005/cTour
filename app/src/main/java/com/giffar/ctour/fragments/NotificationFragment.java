@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -17,13 +16,10 @@ import android.widget.TextView;
 
 
 import com.giffar.ctour.R;
-import com.giffar.ctour.activities.MainActivity;
 import com.giffar.ctour.adapters.NotificationAdapter;
 import com.giffar.ctour.entitys.Notification;
 import com.giffar.ctour.entitys.Timeline;
-import com.giffar.ctour.helpers.GoogleAnalyticsHelper;
 import com.giffar.ctour.models.NotificationModel;
-import com.giffar.ctour.models.TimelineModel;
 
 import java.util.List;
 
@@ -114,24 +110,11 @@ public class NotificationFragment extends BaseFragment implements OnItemClickLis
 
     }
 
-    private void showOfferDetail(Notification notification) {
-        try {
-            Timeline timeline = (Timeline) new TimelineModel(activity).find(notification.getId());
-            if (timeline == null) {
-                getOfferDetail(notification);
-            } else {
-                timeline.setAction(notification.getAction());
-                showOfferDetail(timeline);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
-    private void showOfferDetail(Timeline timeline) {
-        GoogleAnalyticsHelper.eventTracker(activity, GoogleAnalyticsHelper.OFFER_DETAIL_PAGE, GoogleAnalyticsHelper.OPEN_ACTION, timeline.getName());
-
-    }
+//    private void showOfferDetail(Timeline timeline) {
+//        GoogleAnalyticsHelper.eventTracker(activity, GoogleAnalyticsHelper.OFFER_DETAIL_PAGE, GoogleAnalyticsHelper.OPEN_ACTION, timeline.getName());
+//
+//    }
 
     private void getOfferDetail(final Notification notification) {
 //        progressDialog.show();
@@ -172,7 +155,6 @@ public class NotificationFragment extends BaseFragment implements OnItemClickLis
             String notifId = intent.getStringExtra(Notification.ID);
             Notification notification = (Notification) notificationModel.find(notifId);
             notification.setAction(intent.getStringExtra(Notification.ACTION));
-            showOfferDetail(notification);
         }
     };
 

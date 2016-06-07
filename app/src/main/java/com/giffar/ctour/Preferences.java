@@ -19,9 +19,18 @@ public class Preferences {
 
     public static final String NO_CONNECTION = "There is no connection";
 
+    public static final String CLUB_ID = "club_id";
+    public static final String STATUS_MEMBER = "status_member";
+
     public static final String PROMO = "01";
     public static final String INVITE = "02";
     public static final String BOOKING = "03";
+
+
+    public static final String URL_CLUB = "http://www.ctour.web.id/img/club/";
+    public static final String URL_MEMBER = "http://www.ctour.web.id/img/member/";
+    public static final String URL_LICENCE = "http://www.ctour.web.id/img/lisensi/";
+    public static final String URL_STATUS = "http://www.ctour.web.id/img/status/";
 
 
 }

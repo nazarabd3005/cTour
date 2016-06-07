@@ -21,17 +21,17 @@ public class LeftMenuAdapter extends BaseAdapter<LeftMenu> {
         if (convertView == null) {
             holder = new ViewHolder();
             LeftMenu menu = getItem(position);
-            if (position == getCount() - 1) {
-                convertView = inflater.inflate(R.layout.grid_item_left_menu_uber, parent, false);
-                holder.ivIcon = (ImageView) convertView.findViewById(R.id.icon);
-                holder.ivIcon.setImageResource(menu.getIcon());
-            }else {
+//            if (position == getCount() - 1) {
+//                convertView = inflater.inflate(R.layout.grid_item_left_menu_uber, parent, false);
+//                holder.ivIcon = (ImageView) convertView.findViewById(R.id.icon);
+//                holder.ivIcon.setImageResource(menu.getIcon());
+//            }else {
                 convertView = inflater.inflate(R.layout.grid_item_left_menu, parent, false);
                 holder.tvTitle = (TextView) convertView.findViewById(R.id.title);
                 holder.ivIcon = (ImageView) convertView.findViewById(R.id.icon);
                 holder.tvTitle.setText(menu.getTitle());
                 holder.ivIcon.setImageResource(menu.getIcon());
-            }
+//            }
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();

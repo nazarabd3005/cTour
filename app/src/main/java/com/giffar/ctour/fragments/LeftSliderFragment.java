@@ -1,6 +1,8 @@
 package com.giffar.ctour.fragments;
 
 import android.app.AlertDialog;
+import android.app.FragmentTransaction;
+import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -13,6 +15,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.content.LocalBroadcastManager;
 import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
@@ -24,13 +27,23 @@ import com.giffar.ctour.Preferences;
 import com.giffar.ctour.R;
 import com.giffar.ctour.activities.LoginActivity;
 import com.giffar.ctour.activities.MainActivity;
+import com.giffar.ctour.activities.OnTourActivity;
 import com.giffar.ctour.adapters.LeftMenuAdapter;
+import com.giffar.ctour.callbacks.OnTourCallback;
+import com.giffar.ctour.callbacks.OnstatusplanningCallback;
+import com.giffar.ctour.controllers.TouringController;
 import com.giffar.ctour.customview.CircleImageView;
 import com.giffar.ctour.customview.WrappingGridView;
+import com.giffar.ctour.entitys.Club;
 import com.giffar.ctour.entitys.LeftMenu;
+import com.giffar.ctour.entitys.Member;
+import com.giffar.ctour.entitys.OnTour;
+import com.giffar.ctour.entitys.Timeline;
+import com.giffar.ctour.entitys.Touring;
 import com.giffar.ctour.entitys.User;
 import com.giffar.ctour.helpers.AlertHelper;
 import com.giffar.ctour.models.UserModel;
+import com.loopj.android.http.RequestParams;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,9 +56,11 @@ import pl.droidsonroids.gif.GifImageView;
 public class LeftSliderFragment extends BaseFragment implements OnItemClickListener, View.OnClickListener {
     public static final String UPDATE_USER_ACTION = "update_user_action";
     public static final String CLICK_MENU_ACTION = "click_menu_action";
-    private static final int[] menuTitle = {R.string.home, R.string.event, R.string.account};
-
-    private static final int[] menuIcon = {R.drawable.ic_home_selector, R.drawable.ic_event_selector,  R.drawable.ic_account_selector};
+    private static final int[] menuTitle = {R.string.home, R.string.event,R.string.suggestion,R.string.lost,R.string.club, R.string.account,R.string.on_tour};
+    private static int[] menuTItleclik = null;
+    private static final int[] menuIcon = {R.drawable.ic_home_selector, R.drawable.ic_event_selector,R.drawable.destination,R.drawable.people_ask,R.drawable.people_icon, R.drawable.ic_account_selector,R.drawable.road};
+    private static final int[] menuIcon2 = {R.drawable.ic_home_selector, R.drawable.ic_event_selector,R.drawable.destination,R.drawable.people_ask,R.drawable.people_icon, R.drawable.ic_account_selector};
+    private static int[] menuIconclik = null;
     //private ListView lvLeftMenu;
     private LeftMenuAdapter adapter;
     private List<LeftMenu> leftMenus;
@@ -65,14 +80,16 @@ public class LeftSliderFragment extends BaseFragment implements OnItemClickListe
     private boolean closedDrawer = true;
     public AlertDialog alert;
     //RequestButton uberButtonBlack;
-
+    ProgressDialog progressDialog;
+    TouringController touringController;
+    String status = "";
+    Touring touring1;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        adapter = new LeftMenuAdapter(activity);
-        leftMenus = new ArrayList<LeftMenu>();
-        setData();
-        adapter.setData(leftMenus);
+        touringController = new TouringController(activity);
+
+
 //        loggedUser = UserModel.getMe(activity);
 
         LocalBroadcastManager.getInstance(activity).registerReceiver(updateProfileReceiver, new IntentFilter(UPDATE_USER_ACTION));
@@ -82,11 +99,20 @@ public class LeftSliderFragment extends BaseFragment implements OnItemClickListe
 
     @Override
     public void initView(View view) {
-
+        progressDialog = new ProgressDialog(activity);
+        progressDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        progressDialog.setMessage("Loading...");
+        progressDialog.show();
 //        progressBar = (GifImageView) view.findViewById(R.id.loading);
 //        lvLeftMenu = (ListView) view.findViewById(R.id.lv_left_menu);
         menuGridView = (WrappingGridView) view.findViewById(R.id.left_menu_grid);
         ivCloseDrawer = (ImageView) view.findViewById(R.id.iv_close_drawer);
+        adapter = new LeftMenuAdapter(activity);
+        leftMenus = new ArrayList<LeftMenu>();
+//       isthereTour();
+
+        adapter.setData(leftMenus);
+        menuGridView.setAdapter(adapter);
         ivCloseDrawer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -123,6 +149,48 @@ public class LeftSliderFragment extends BaseFragment implements OnItemClickListe
         alert.show();
     }
 
+    public void isthereTour(){
+        RequestParams params = new RequestParams();
+        params.put(Timeline.ID_MEMBER,APP.getConfig(activity,Preferences.LOGGED_USER_ID));
+        touringController.postResponseIsInvitedTouring(params, new OnTourCallback() {
+            @Override
+            public void OnSuccess(List<Touring> clubs, String message) {
+
+            }
+
+            @Override
+            public void OnSuccess(Touring touring, String message) {
+                touring1 = touring;
+                menuTItleclik = menuTitle;
+                menuIconclik = menuIcon;
+                status = touring.getStatus();
+                if (touring.getStatus().equals("1")||touring.getStatus().equals("4") ){
+                    menuTItleclik[6] = R.string.on_tour;
+                }else{
+                    menuTItleclik[6] = R.string.invitation;
+                }
+                setData();
+            }
+
+            @Override
+            public void OnFailed(String message) {
+                menuTItleclik = menuTitle;
+                if (APP.getConfig(activity,Preferences.STATUS_MEMBER).equals("1")){
+                    menuIconclik = menuIcon;
+                    menuTItleclik[6] = R.string.create_planning;
+                }else{
+                    menuIconclik = menuIcon2;
+                }
+                setData();
+            }
+
+            @Override
+            public void OnFinish() {
+                progressDialog.dismiss();
+            }
+        });
+    }
+
     @Override
     public void setUICallbacks() {
         menuGridView.setOnItemClickListener(this);
@@ -131,9 +199,9 @@ public class LeftSliderFragment extends BaseFragment implements OnItemClickListe
     @Override
     public void updateUI() {
         loggedUser = UserModel.getMe(activity);
-        menuGridView.setAdapter(adapter);
-        LocalBroadcastManager.getInstance(activity).registerReceiver(broadcastReceiver, new IntentFilter("image_profil"));
 
+        LocalBroadcastManager.getInstance(activity).registerReceiver(broadcastReceiver, new IntentFilter("image_profil"));
+        isthereTour();
     }
 
 
@@ -155,47 +223,63 @@ public class LeftSliderFragment extends BaseFragment implements OnItemClickListe
                 fragment = new HomeFragment();
                 break;
             case 1:
-//                fragment = new RoomFragment();
+                fragment = new EventFragment();
                 break;
             case 2:
 //                fragment = new PromotionFragment();
                 break;
             case 3:
+                fragment = new LostFragment();
 //                fragment = new EventTabFragment();
-                getBaseActivity().hideActionBarLogo();
-                getBaseActivity().showActionBarTitle();
+//                getBaseActivity().hideActionBarLogo();
+//                getBaseActivity().showActionBarTitle();
                 break;
             case 4:
-//                fragment = new RSVNFragment();
+                fragment = new ClubFragment();
                 break;
             case 5:
-//                fragment = new CustodyFragment();
+                AlertDialog.Builder builder = AlertHelper.getInstance().showAlertWithoutListener(activity, "Confirmation", "Do you want to Log Out?");
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        logout();
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                builder.show();
                 break;
             case 6:
-                if (APP.getConfig(activity, Preferences.USER_LOGIN).equals("Y")) {
-//                    fragment = new AccountFragment();
-                } else {
-                    AlertDialog.Builder builder = AlertHelper.getInstance().showAlertWithoutListener(activity, "Account Permission", "you need to login first. Login?");
-                    builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            ((MainActivity) getActivity()).changeActivity(LoginActivity.class, true, null, 0);
-                        }
-                    });
-                    builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-//                            AlertHelper.getInstance().showAlert(MainActivity.this, "To use this App you need to turn on your Bluetooth");
-                            dialog.dismiss();
-                        }
-                    });
-                    builder.show();
+                if (!status.equals("")){
+                    if (status.equals("1")||status.equals("4")){
+                        Bundle bundle=new Bundle();
+                        bundle.putString(Touring.ID,touring1.getId());
+                        ((MainActivity) activity).changeActivity(OnTourActivity.class,false,bundle,0);
+                    }else if (status.equals("0")){
+                        JoinPlanningFragment joinPlanningFragment = new JoinPlanningFragment();
+                        FragmentTransaction ft = getFragmentManager().beginTransaction();
+                        Bundle bundle = new Bundle();
+                        bundle.putString(Touring.ID,touring1.getId());
+                        joinPlanningFragment.setArguments(bundle);
+                        ft.addToBackStack(joinPlanningFragment.getPageTitle());
+                        ft.setCustomAnimations(R.animator.fade_in, 0, 0, R.animator.fade_out);
+                        ft.replace(R.id.drawer_layout, joinPlanningFragment, joinPlanningFragment.getPageTitle());
+                        ft.commit();
+                    }
+                } else if (APP.getConfig(activity,Preferences.STATUS_MEMBER).equals("1")){
+                    CreatePlanningFragment createPlanningFragment = new CreatePlanningFragment();
+                    FragmentTransaction ft = getFragmentManager().beginTransaction();
+                    ft.addToBackStack(createPlanningFragment.getPageTitle());
+                    ft.setCustomAnimations(R.animator.fade_in, 0, 0, R.animator.fade_out);
+                    ft.replace(R.id.drawer_layout, createPlanningFragment, createPlanningFragment.getPageTitle());
+                    ft.commit();
                 }
 
                 break;
-            case 7:
-//                fragment = new HelpActivity();
-                launchUber();
             default:
                 break;
         }
@@ -204,7 +288,23 @@ public class LeftSliderFragment extends BaseFragment implements OnItemClickListe
         if (selectedView != null)
             selectedView.setSelected(false);
     }
-
+    private void logout() {
+        progressDialog.setMessage("Logout...");
+        progressDialog.show();
+        APP.setConfig(activity, APP.TOKEN_KEY, "");
+        APP.setConfig(activity, Preferences.LOGGED_USER_ID,"");
+        APP.TOKEN = "";
+        try {
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
+        APP.setConfig(activity, Preferences.USER_LOGIN, "N");
+        APP.setConfig(activity,Preferences.CLUB_ID,"");
+        APP.setConfig(activity,Preferences.STATUS_MEMBER,"");
+        activity.finish();
+        progressDialog.dismiss();
+        startActivity(new Intent(activity, LoginActivity.class));
+    }
     public void launchUber() {
         try {
             PackageManager pm = activity.getPackageManager();
@@ -229,12 +329,14 @@ public class LeftSliderFragment extends BaseFragment implements OnItemClickListe
     }
 
     private void setData() {
-        for (int i = 0; i < menuIcon.length; i++) {
+        leftMenus.clear();
+        for (int i = 0; i < menuIconclik.length; i++) {
             LeftMenu menu = new LeftMenu();
-            menu.setIcon(menuIcon[i]);
-            menu.setTitle(getString(menuTitle[i]));
+            menu.setIcon(menuIconclik[i]);
+            menu.setTitle(getString(menuTItleclik[i]));
             leftMenus.add(menu);
         }
+        adapter.notifyDataSetChanged();
     }
 
     @Override
@@ -301,11 +403,7 @@ public class LeftSliderFragment extends BaseFragment implements OnItemClickListe
     public void changeFragment(BaseFragment fragment, int position) {
         if (fragment != null && selectedPosition != position) {
             getBaseActivity().setDefaultActionbarIcon();
-            getFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-            if (position == 0)
                 replaceFragment(R.id.fragment_container, fragment, false);
-            else
-                replaceFragment(R.id.fragment_container, fragment, true);
             selectedPosition = position;
         }
         if (closedDrawer)
@@ -320,4 +418,6 @@ public class LeftSliderFragment extends BaseFragment implements OnItemClickListe
 //            imagePhotoLoader(loggedUser.getImage(),R.drawable.sliders_avatar_sample_empty, ivUserProfile, 100, progressBar);
         }
     };
+
+
 }

@@ -42,6 +42,7 @@ public abstract class BaseFragment extends Fragment implements FragmentInteface 
     protected LayoutInflater inflater;
     protected PictureHelper pictureHelper;
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -146,8 +147,8 @@ public abstract class BaseFragment extends Fragment implements FragmentInteface 
     @Override
     public void onStart() {
         super.onStart();
-        if (getPageTitle() != null)
-            GoogleAnalyticsHelper.screenTracker(activity, getPageTitle());
+//        if (getPageTitle() != null)
+//            GoogleAnalyticsHelper.screenTracker(activity, getPageTitle());
     }
 
     public String addNewLine(String value) {

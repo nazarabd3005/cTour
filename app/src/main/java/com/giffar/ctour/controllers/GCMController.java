@@ -25,7 +25,7 @@ public class GCMController {
     private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
     public static final String PROPERTY_REG_ID = "registration_id";
     private static final String PROPERTY_APP_VERSION = "appVersion";
-    private static final String SENDER_ID = "622922702457";
+    private static final String SENDER_ID = "634919951861";
     private GoogleCloudMessaging gcm;
     private static GCMController instance;
     private Context context;
